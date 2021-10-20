@@ -1,0 +1,7 @@
+
+*.tsv
+test.ipynb
+.ipynb_checkpoints/EDA_G-checkpoint.ipynb
+EDA_G_mito.ipynb
+.ipynb_checkpoints/test-checkpoint.ipynb
+.ipynb_checkpoints/EDA_G_mito-checkpoint.ipynb
