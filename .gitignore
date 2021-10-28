@@ -9,3 +9,4 @@ workspace.code-workspace
 .vscode/settings.json
 
 Guillaume/test_jl.ipynb
+Guillaume/test_gitignore.py
