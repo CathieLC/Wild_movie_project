@@ -28,9 +28,18 @@ st.title('Movie Analysis Project')
 #     ("Movie Duration", "Ratings")
 # )
 
+
+@st.cache
+def load_dataset_basics():
+    return pd.read_csv("https://datasets.imdbws.com/title.basics.tsv.gz", sep="\t", low_memory=False)
+
+@st.cache
+def load_dataset_ratings():
+    return pd.read_csv("https://datasets.imdbws.com/title.ratings.tsv.gz", sep="\t")
+
 @st.cache
 def load_basics():
-    basics_df = pd.read_csv("https://datasets.imdbws.com/title.basics.tsv.gz", sep="\t", low_memory=False)
+    basics_df = load_dataset_basics()
     basics_df = basics_df[basics_df['isAdult'] == '0']
     basics_df = basics_df[basics_df['titleType'] == 'movie']
     basics_df = basics_df.replace('\\N', pd.NaT)
@@ -46,8 +55,8 @@ def load_basics():
 
 @st.cache
 def load_ratings():
-    ratings_df = pd.read_csv("https://datasets.imdbws.com/title.ratings.tsv.gz", sep="\t")
-    basics_df = pd.read_csv("https://datasets.imdbws.com/title.basics.tsv.gz", sep="\t", low_memory=False)
+    ratings_df = load_dataset_ratings()
+    basics_df = load_dataset_basics()
     basics_df = basics_df[basics_df['isAdult'] == '0']
     basics_df = basics_df[basics_df['titleType'] == 'movie']
     basics_df = basics_df[['tconst', 'primaryTitle', 'startYear', 'genres']]
