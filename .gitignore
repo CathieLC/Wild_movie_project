@@ -11,3 +11,4 @@ workspace.code-workspace
 Guillaume/test_jl.ipynb
 Guillaume/test_gitignore.py
 Catherine/Catherine_analyse db.ipynb
+.DS_Store
