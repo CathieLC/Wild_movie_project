@@ -1,0 +1,111 @@
+,tconst,primaryTitle,startYear,genres,averageRating,numVotes,mainGenre,secondaryGenres
+3631,tt0019760,Man with a Movie Camera,1929,"Documentary,Music",8.4,23970,Documentary,Music
+4591,tt0021749,City Lights,1931,"Comedy,Drama,Romance",8.5,177064,Comedy,"Drama,Romance"
+8232,tt0027977,Modern Times,1936,"Comedy,Drama,Family",8.5,230166,Comedy,"Drama,Family"
+11211,tt0032553,The Great Dictator,1940,"Comedy,Drama,War",8.4,214406,Comedy,"Drama,War"
+12603,tt0034583,Casablanca,1942,"Drama,Romance,War",8.5,545836,Drama,"Romance,War"
+15446,tt0038650,It's a Wonderful Life,1946,"Drama,Family,Fantasy",8.6,424593,Drama,"Family,Fantasy"
+18394,tt0043014,Sunset Blvd.,1950,"Drama,Film-Noir",8.4,212415,Drama,Film-Noir
+21385,tt0047396,Rear Window,1954,"Mystery,Thriller",8.5,468502,Mystery,Thriller
+21454,tt0047478,Seven Samurai,1954,"Action,Adventure,Drama",8.6,330874,Action,"Adventure,Drama"
+22140,tt0048473,Pather Panchali,1955,Drama,8.5,29124,Drama,
+23230,tt0050083,12 Angry Men,1957,"Crime,Drama",9.0,735183,Crime,Drama
+23810,tt0050825,Paths of Glory,1957,"Drama,War",8.4,188267,Drama,War
+24098,tt0051201,Witness for the Prosecution,1957,"Crime,Drama,Mystery",8.4,117478,Crime,"Drama,Mystery"
+26284,tt0054215,Psycho,1960,"Horror,Mystery,Thriller",8.5,635698,Horror,"Mystery,Thriller"
+27625,tt0056058,Hara-Kiri,1962,"Action,Drama,Mystery",8.6,50050,Action,"Drama,Mystery"
+28341,tt0057012,Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb,1964,"Comedy,War",8.4,469954,Comedy,War
+28776,tt0057565,High and Low,1963,"Crime,Drama,Mystery",8.4,40255,Crime,"Drama,Mystery"
+30547,tt0060196,"The Good, the Bad and the Ugly",1966,Western,8.8,722314,Western,
+33092,tt0064116,Once Upon a Time in the West,1968,Western,8.5,316126,Western,
+36120,tt0068646,The Godfather,1972,"Crime,Drama",9.2,1715521,Crime,Drama
+38006,tt0071562,The Godfather: Part II,1974,"Crime,Drama",9.0,1191546,Crime,Drama
+39176,tt0073486,One Flew Over the Cuckoo's Nest,1975,Drama,8.7,959332,Drama,
+41136,tt0076759,Star Wars: Episode IV - A New Hope,1977,"Action,Adventure,Fantasy",8.6,1284534,Action,"Adventure,Fantasy"
+42222,tt0078748,Alien,1979,"Horror,Sci-Fi",8.4,829608,Horror,Sci-Fi
+42248,tt0078788,Apocalypse Now,1979,"Drama,Mystery,War",8.4,634003,Drama,"Mystery,War"
+43384,tt0080684,Star Wars: Episode V - The Empire Strikes Back,1980,"Action,Adventure,Fantasy",8.7,1212743,Action,"Adventure,Fantasy"
+43886,tt0081505,The Shining,1980,"Drama,Horror",8.4,952718,Drama,Horror
+44757,tt0082971,Indiana Jones and the Raiders of the Lost Ark,1981,"Action,Adventure",8.4,921866,Action,Adventure
+48000,tt0088763,Back to the Future,1985,"Adventure,Comedy,Sci-Fi",8.5,1121402,Adventure,"Comedy,Sci-Fi"
+51838,tt0095327,Grave of the Fireflies,1988,"Animation,Drama,War",8.5,255231,Animation,"Drama,War"
+52095,tt0095765,Cinema Paradiso,1988,"Drama,Romance",8.5,247126,Drama,Romance
+54270,tt0099685,Goodfellas,1990,"Biography,Crime,Drama",8.7,1078298,Biography,"Crime,Drama"
+56063,tt0102926,The Silence of the Lambs,1991,"Crime,Drama,Horror",8.6,1342115,Crime,"Drama,Horror"
+56141,tt0103064,Terminator 2: Judgment Day,1991,"Action,Sci-Fi",8.5,1039690,Action,Sci-Fi
+56422,tt0103767,Baraka,1992,Documentary,8.6,37830,Documentary,
+58765,tt0108052,Schindler's List,1993,"Biography,Drama,History",8.9,1274976,Biography,"Drama,History"
+59597,tt0109830,Forrest Gump,1994,"Drama,Romance",8.8,1921014,Drama,Romance
+59871,tt0110357,The Lion King,1994,"Adventure,Animation,Drama",8.5,990342,Adventure,"Animation,Drama"
+59912,tt0110413,Léon: The Professional,1994,"Action,Crime,Drama",8.5,1090035,Action,"Crime,Drama"
+60179,tt0110912,Pulp Fiction,1994,"Crime,Drama",8.9,1922449,Crime,Drama
+60326,tt0111161,The Shawshank Redemption,1994,Drama,9.3,2484590,Drama,
+61814,tt0114369,Se7en,1995,"Crime,Drama,Mystery",8.6,1529416,Crime,"Drama,Mystery"
+62012,tt0114814,The Usual Suspects,1995,"Crime,Drama,Mystery",8.5,1034534,Crime,"Drama,Mystery"
+63833,tt0118799,Life Is Beautiful,1997,"Comedy,Drama,Romance",8.6,656525,Comedy,"Drama,Romance"
+64383,tt0119698,Princess Mononoke,1997,"Action,Adventure,Animation",8.4,367922,Action,"Adventure,Animation"
+64899,tt0120586,American History X,1998,Drama,8.5,1072658,Drama,
+64968,tt0120689,The Green Mile,1999,"Crime,Drama,Fantasy",8.6,1212357,Crime,"Drama,Fantasy"
+65000,tt0120737,The Lord of the Rings: The Fellowship of the Ring,2001,"Action,Adventure,Drama",8.8,1742335,Action,"Adventure,Drama"
+65057,tt0120815,Saving Private Ryan,1998,"Drama,War",8.6,1301608,Drama,War
+68319,tt0133093,The Matrix,1999,"Action,Sci-Fi",8.7,1775090,Action,Sci-Fi
+69391,tt0137523,Fight Club,1999,Drama,8.8,1957947,Drama,
+75905,tt0167260,The Lord of the Rings: The Return of the King,2003,"Action,Adventure,Drama",8.9,1721011,Action,"Adventure,Drama"
+75906,tt0167261,The Lord of the Rings: The Two Towers,2002,"Action,Adventure,Drama",8.7,1555923,Action,"Adventure,Drama"
+77133,tt0172495,Gladiator,2000,"Action,Adventure,Drama",8.5,1409408,Action,"Adventure,Drama"
+86961,tt0209144,Memento,2000,"Mystery,Thriller",8.4,1176060,Mystery,Thriller
+93988,tt0245429,Spirited Away,2001,"Adventure,Animation,Family",8.6,700496,Adventure,"Animation,Family"
+95604,tt0252487,The Chaos Class,1975,"Comedy,Drama",9.3,39243,Comedy,Drama
+95605,tt0252488,The Chaos Class Failed the Class,1976,Comedy,8.9,22817,Comedy,
+95821,tt0253474,The Pianist,2002,"Biography,Drama,Music",8.5,776838,Biography,"Drama,Music"
+95901,tt0253828,Tosun Pasa,1976,"Comedy,History",9.0,22627,Comedy,History
+109408,tt0317248,City of God,2002,"Crime,Drama",8.6,725480,Crime,Drama
+113948,tt0346336,The Best of Youth,2003,"Drama,Romance",8.5,21480,Drama,Romance
+116992,tt0364569,Oldboy,2003,"Action,Drama,Mystery",8.4,545342,Action,"Drama,Mystery"
+122211,tt0400234,Black Friday,2004,"Action,Crime,Drama",8.5,20111,Action,"Crime,Drama"
+122810,tt0405094,The Lives of Others,2006,"Drama,Mystery,Thriller",8.4,374711,Drama,"Mystery,Thriller"
+123135,tt0407887,The Departed,2006,"Crime,Drama,Thriller",8.5,1249049,Crime,"Drama,Thriller"
+130447,tt0468569,The Dark Knight,2008,"Action,Crime,Drama",9.0,2438706,Action,"Crime,Drama"
+132155,tt0482571,The Prestige,2006,"Drama,Mystery,Sci-Fi",8.5,1253930,Drama,"Mystery,Sci-Fi"
+134419,tt0770802,Samsara,2011,"Documentary,Music",8.5,34798,Documentary,Music
+136148,tt0816692,Interstellar,2014,"Adventure,Drama,Sci-Fi",8.6,1636137,Adventure,"Drama,Sci-Fi"
+139042,tt0910970,WALL·E,2008,"Adventure,Animation,Family",8.4,1049232,Adventure,"Animation,Family"
+140777,tt0986264,Like Stars on Earth,2007,"Drama,Family",8.4,182045,Drama,Family
+142100,tt1014762,Home,2009,Documentary,8.5,22122,Documentary,
+142410,tt10189514,Soorarai Pottru,2020,Drama,9.1,94380,Drama,
+143072,tt10280296,Sardar Udham,2021,"Biography,Crime,Drama",9.0,25857,Biography,"Crime,Drama"
+143180,tt10295212,Shershaah,2021,"Action,Biography,Drama",8.7,106719,Action,"Biography,Drama"
+145275,tt10554232,Dara of Jasenovac,2020,"Drama,War",8.8,79769,Drama,War
+151946,tt1152758,Dear Zachary: A Letter to a Son About His Father,2008,"Biography,Crime,Documentary",8.5,35308,Biography,"Crime,Documentary"
+154174,tt1187043,3 Idiots,2009,"Comedy,Drama",8.4,370512,Comedy,Drama
+154860,tt11989890,David Attenborough: A Life on Our Planet,2020,"Biography,Documentary",9.0,29636,Biography,Documentary
+156903,tt12361178,Drishyam 2,2021,"Crime,Drama,Thriller",8.6,31427,Crime,"Drama,Thriller"
+161318,tt1313104,The Cove,2009,"Biography,Crime,Documentary",8.4,48890,Biography,"Crime,Documentary"
+163931,tt1345836,The Dark Knight Rises,2012,"Action,Crime",8.4,1589273,Action,Crime
+165455,tt1375666,Inception,2010,"Action,Adventure,Sci-Fi",8.8,2188526,Action,"Adventure,Sci-Fi"
+168071,tt1424432,Senna,2010,"Biography,Documentary,Sport",8.5,68065,Biography,"Documentary,Sport"
+172153,tt15097216,Jai Bhim,2021,"Crime,Drama",9.6,62975,Crime,Drama
+178741,tt1675434,The Intouchables,2011,"Biography,Comedy,Drama",8.5,802865,Biography,"Comedy,Drama"
+184753,tt1853728,Django Unchained,2012,"Drama,Western",8.4,1439777,Drama,Western
+192969,tt2170667,Wheels,2014,Drama,8.4,23644,Drama,
+198790,tt2380307,Coco,2017,"Adventure,Animation,Comedy",8.4,439524,Adventure,"Animation,Comedy"
+202410,tt2582802,Whiplash,2014,"Drama,Music",8.5,771359,Drama,Music
+202528,tt2592910,CM101MMXI Fundamentals,2013,"Comedy,Documentary",9.1,44800,Comedy,Documentary
+216432,tt3674140,The Salt of the Earth,2014,"Biography,Documentary,History",8.5,20953,Biography,"Documentary,History"
+221959,tt4154756,Avengers: Infinity War,2018,"Action,Adventure,Sci-Fi",8.4,938144,Action,"Adventure,Sci-Fi"
+221960,tt4154796,Avengers: Endgame,2019,"Action,Adventure,Drama",8.4,957326,Action,"Adventure,Drama"
+226730,tt4633694,Spider-Man: Into the Spider-Verse,2018,"Action,Adventure,Animation",8.4,435358,Action,"Adventure,Animation"
+230981,tt5074352,Dangal,2016,"Action,Biography,Drama",8.4,173167,Action,"Biography,Drama"
+233661,tt5311514,Your Name.,2016,"Animation,Drama,Fantasy",8.4,229556,Animation,"Drama,Fantasy"
+234147,tt5354160,Mirror Game,2016,"Crime,Mystery,Thriller",9.1,25184,Crime,"Mystery,Thriller"
+238423,tt5813916,The Mountain II,2016,"Action,Drama,War",8.7,106996,Action,"Drama,War"
+243505,tt6316138,Ayla: The Daughter of War,2017,"Biography,Drama,History",8.4,37339,Biography,"Drama,History"
+247010,tt6751668,Parasite,2019,"Comedy,Drama,Thriller",8.6,679207,Comedy,"Drama,Thriller"
+249035,tt7019842,96,2018,"Drama,Romance",8.6,24863,Drama,Romance
+249287,tt7060344,Raatchasan,2018,"Action,Crime,Drama",8.4,35763,Action,"Crime,Drama"
+250937,tt7286456,Joker,2019,"Crime,Drama,Thriller",8.4,1090789,Crime,"Drama,Thriller"
+251775,tt7392212,Rangasthalam 1985,2018,"Action,Drama",8.4,21088,Action,Drama
+253868,tt7681902,Won't You Be My Neighbor?,2018,"Biography,Documentary",8.4,24669,Biography,Documentary
+257545,tt8267604,Capernaum,2018,Drama,8.4,77356,Drama,
+258975,tt8503618,Hamilton,2020,"Biography,Drama,History",8.4,76108,Biography,"Drama,History"
+264191,tt9477520,Asuran,2019,"Action,Drama",8.5,21054,Action,Drama
