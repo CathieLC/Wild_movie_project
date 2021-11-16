@@ -83,7 +83,8 @@ def home():
     with col2:
         st.markdown('[Franck Joly](https://github.com/JOLYfranck)')
         st.image('assets/franck.jpeg')
-        
+    
+    ''    
     col3, col4 = st.columns(2)
     
     with col3:
@@ -92,6 +93,8 @@ def home():
         
     with col4:
         st.markdown('[Josse Preis](https://github.com/jossepreis)')
+        st.image('assets/josse.png')
+        
 
 def movie_duration():
     
