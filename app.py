@@ -24,12 +24,6 @@ _max_width_()
 
 st.title('Movie Analysis Project')
 
-# add_selectbox = st.sidebar.selectbox(
-#     "Select a KPI (test, does nothing yet)",
-#     ("Movie Duration", "Ratings")
-# )
-
-
 def load_ratings():
     return pd.read_csv('data/movies_ratings.csv')
 
@@ -42,12 +36,12 @@ def load_actors():
 def load_actors_series():
     return pd.read_csv('data/actors_series_year.csv')
 
-data_load_state = st.text('Loading pages...')
+
 data_runtime = load_runtime()
 data_ratings = load_ratings()
 data_actors = load_actors()
 data_actors_series = load_actors_series()
-data_load_state.text('Loading pages...done!')
+
 
 
 def main():
@@ -56,7 +50,9 @@ def main():
         'Home': home,
         'Movie Duration': movie_duration,
         'Ratings': movie_ratings,
-        'Actors': actors_ratings}
+        'Actors': actors_ratings,
+        'Age': actors_age,
+        'Recommendations': recommendations}
 
     if "page" not in st.session_state:
         st.session_state.update({
@@ -78,10 +74,24 @@ def home():
     'Then, we will provide a recommendation algorithm to help him select the best movies to play at the theatre, based on the tastes of his audience.'
     ''
     'This app is brought to you by the awesome Wild Data Green Team 1 (yes we need a better name):'
-    '   - Guillaume Arp'
-    '   - Franck Joly'
-    '   - Catherine Le Calve'
-    '   - Josse Preis'
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.markdown('[Guillaume Arp](https://github.com/GuillaumeArp)')
+        st.image('assets/guillaume.png')
+        
+    with col2:
+        st.markdown('[Franck Joly](https://github.com/JOLYfranck)')
+        st.image('assets/franck.jpeg')
+        
+    col3, col4 = st.columns(2)
+    
+    with col3:
+        st.markdown('[Catherine Le Calve](https://github.com/CathieLC)')
+        st.image('assets/cath.png')
+        
+    with col4:
+        st.markdown('[Josse Preis](https://github.com/jossepreis)')
 
 def movie_duration():
     
@@ -369,6 +379,13 @@ def actors_ratings():
     'There is little to analyze here, we can at first see that Series started to take off, expectedly, after the World War 2 and the advent of the television. We can also note, again as expected, that no actor appears in the two graphs, and TV Series actors are usually specialized in this genre.'
     'There are some more faults in the database that this graph points out though. It looks like the 1970s telenovelas episodes were improperly categorized as tvSeries instead of episodes, which explains the inhuman productivity of the actors showing in this decade. This is another bias of the database, which makes it quite difficult to interpret results on a wold scale.'
 
+
+def actors_age():
+    
+    st.subheader('Actors and Actresses\'s Age Evolution')
+    
+def recommendations():
+    pass
 
 if __name__ == "__main__":
     main()
