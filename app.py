@@ -25,16 +25,16 @@ _max_width_()
 st.title('Movie Analysis Project')
 
 def load_ratings():
-    return pd.read_csv('data/movies_ratings.csv')
+    return pd.read_csv('data/movies_ratings.csv.zip')
 
 def load_runtime():
-    return pd.read_csv('data/movies_duration.csv')
+    return pd.read_csv('data/movies_duration.csv.zip')
 
 def load_actors():
-    return pd.read_csv('data/actors_movies_year.csv')
+    return pd.read_csv('data/actors_movies_year.csv.zip')
 
 def load_actors_series():
-    return pd.read_csv('data/actors_series_year.csv')
+    return pd.read_csv('data/actors_series_year.csv.zip')
 
 
 data_runtime = load_runtime()
