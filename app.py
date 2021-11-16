@@ -24,26 +24,24 @@ _max_width_()
 
 st.title('Movie Analysis Project')
 
-# add_selectbox = st.sidebar.selectbox(
-#     "Select a KPI (test, does nothing yet)",
-#     ("Movie Duration", "Ratings")
-# )
-
-
 def load_ratings():
-    return pd.read_csv('data/movies_ratings.csv')
+    return pd.read_csv('data/movies_ratings.csv.zip')
 
 def load_runtime():
-    return pd.read_csv('data/movies_duration.csv')
+    return pd.read_csv('data/movies_duration.csv.zip')
 
 def load_actors():
-    return pd.read_csv('data/actors_movies_year.csv')
+    return pd.read_csv('data/actors_movies_year.csv.zip')
 
-data_load_state = st.text('Loading pages...')
+def load_actors_series():
+    return pd.read_csv('data/actors_series_year.csv.zip')
+
+
 data_runtime = load_runtime()
 data_ratings = load_ratings()
 data_actors = load_actors()
-data_load_state.text('Loading pages...done!')
+data_actors_series = load_actors_series()
+
 
 
 def main():
@@ -52,7 +50,9 @@ def main():
         'Home': home,
         'Movie Duration': movie_duration,
         'Ratings': movie_ratings,
-        'Actors': actors_ratings}
+        'Actors': actors_ratings,
+        'Age': actors_age,
+        'Recommendations': recommendations}
 
     if "page" not in st.session_state:
         st.session_state.update({
@@ -74,10 +74,27 @@ def home():
     'Then, we will provide a recommendation algorithm to help him select the best movies to play at the theatre, based on the tastes of his audience.'
     ''
     'This app is brought to you by the awesome Wild Data Green Team 1 (yes we need a better name):'
-    '   - Guillaume Arp'
-    '   - Franck Joly'
-    '   - Catherine Le Calve'
-    '   - Josse Preis'
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.markdown('[Guillaume Arp](https://github.com/GuillaumeArp)')
+        st.image('assets/guillaume.png')
+        
+    with col2:
+        st.markdown('[Franck Joly](https://github.com/JOLYfranck)')
+        st.image('assets/franck.jpeg')
+    
+    ''    
+    col3, col4 = st.columns(2)
+    
+    with col3:
+        st.markdown('[Catherine Le Calve](https://github.com/CathieLC)')
+        st.image('assets/cath.png')
+        
+    with col4:
+        st.markdown('[Josse Preis](https://github.com/jossepreis)')
+        st.image('assets/josse.png')
+        
 
 def movie_duration():
     
@@ -164,7 +181,7 @@ def actors_ratings():
 
     fig = make_subplots(
         rows=4, cols=3,
-        subplot_titles=('1920-1929', '1930-1939','1940-1949','1950-1959','1960-1969','1970-1979','1980-1989','1990-1999','2000-2009','2010-2019','2020-2029','toutes périodes confondues'),
+        subplot_titles=('1920-1929', '1930-1939','1940-1949','1950-1959','1960-1969','1970-1979','1980-1989','1990-1999','2000-2009','2010-2019','2020-2029','Overall Results'),
         )
 
     fig.append_trace(
@@ -254,8 +271,124 @@ def actors_ratings():
     fig.update_layout(template='plotly_dark', title='5 Most Active Actors in Movies per Decade' ,showlegend=False,height = 1250,width=1000)
     st.plotly_chart(fig, use_container_width=True)
 
-    'There are some noticeable patterns here. During the 1920s and 1930s decades, most of the top 5 actors (when it comes to the sheer number of movies) were Japanese, with the notable exception of Sau-Nin Wong who lived in Hong Kong. The numbers are also on par with more recent decades, indicating a very prolific film industry in the Far East before the Second World War. This warrants deeper analysis, but it is worth reminding for now that a political context of extreme nationalism and regional conflict often means a heavy production of propaganda movies.'
+    'There are some noticeable patterns here. We can notice first, looking at the overall results, we can see that the top 5 most productive actors are Asian, with one Japanese actor, one Korean, and the other 3 being Indians.'
+    'This trend is verified when we look into the details of the different decades, which shows the fast production style of the Indian and Japanese movie industries.'
+    'There are some caveats though to note. We tried to filter out the adult movies for our analysis (on all topics), but we can\'t help noticing that a good number of them are still there. If we look at the most productive actor in the 2000s, we find that Seiji Nakamitsu is specialized in adult movies (from what I could gather after a quick look at his bio). However, after looking at a sample of his movies in the database, it appears that they are not tagged properly as Adult, nor do they have the Adult category in the genres. This is one of the most important limitations of the database, the quality of the indexation of the non american or european movies is quite lackluster, which is to be expected coming from an american website. Although it aims at being comprehensive, there will always be a western bias that needs to be taken into account.'
+    'Let\'s have a look now at the same graphs but with the series instead, to see if we can see some identical names or if the actors are different.'
     
+    depart2 = 1920
+    fin2 = 1929
+    subplot2 = []
+    for i in range(11):
+        actors_series_decade = data_actors_series[(data_actors_series['startYear']>=depart2)&(data_actors_series['startYear']<=fin2)]
+        temp = actors_series_decade['primaryName'].value_counts()[:5].rename_axis('name').reset_index(name='count')
+        subplot2.append(temp)
+        depart2+=10
+        fin2+=10
+    globa2 = data_actors_series['primaryName'].value_counts()[:5].rename_axis('name').reset_index(name='count')
+    
+    fig2 = make_subplots(
+        rows=4, cols=3,
+        subplot_titles=('1920-1929', '1930-1939','1940-1949','1950-1959','1960-1969','1970-1979','1980-1989','1990-1999','2000-2009','2010-2019','2020-2029','Overall Results'),
+        )
+
+    fig2.append_trace(
+        go.Bar(x=subplot2[0]['name'],
+        y=subplot2[0]['count'],
+        marker_color=px.colors.qualitative.Plotly),
+        row=1, col=1
+    )
+
+    fig2.append_trace(
+        go.Bar(x=subplot2[1]['name'],
+        y=subplot2[1]['count'],
+        marker_color=px.colors.qualitative.Plotly),
+        row=1, col=2
+    )
+
+    fig2.append_trace(
+        go.Bar(x=subplot2[2]['name'],
+        y=subplot2[2]['count'],
+        marker_color=px.colors.qualitative.Plotly),
+        row=1, col=3
+    )
+
+    fig2.append_trace(
+        go.Bar(x=subplot2[3]['name'],
+        y=subplot2[3]['count'],
+        marker_color=px.colors.qualitative.Plotly),
+        row=2, col=1
+    )
+
+    fig2.append_trace(
+        go.Bar(x=subplot2[4]['name'],
+        y=subplot2[4]['count'],
+        marker_color=px.colors.qualitative.Plotly),
+        row=2, col=2
+    )
+
+    fig2.append_trace(
+        go.Bar(x=subplot2[5]['name'],
+        y=subplot[5]['count'],
+        marker_color=px.colors.qualitative.Plotly),
+        row=2, col=3
+    )
+
+    fig2.append_trace(
+        go.Bar(x=subplot2[6]['name'],
+        y=subplot2[6]['count'],
+        marker_color=px.colors.qualitative.Plotly),
+        row=3, col=1
+    )
+
+    fig2.append_trace(
+        go.Bar(x=subplot2[7]['name'],
+        y=subplot2[7]['count'],
+        marker_color=px.colors.qualitative.Plotly),
+        row=3, col=2
+    )
+
+    fig2.append_trace(
+        go.Bar(x=subplot2[8]['name'],
+        y=subplot2[8]['count'],
+        marker_color=px.colors.qualitative.Plotly),
+        row=3, col=3
+    )
+
+    fig2.append_trace(
+        go.Bar(x=subplot2[9]['name'],
+        y=subplot[9]['count'],
+        marker_color=px.colors.qualitative.Plotly),
+        row=4, col=1
+    )
+
+    fig2.append_trace(
+        go.Bar(x=subplot2[10]['name'],
+        y=subplot2[10]['count'],
+        marker_color=px.colors.qualitative.Plotly),
+        row=4, col=2
+    )
+
+    fig2.append_trace(
+        go.Bar(x=globa2['name'],
+        y=globa2['count'],
+        marker_color=px.colors.qualitative.Plotly),
+        row=4, col=3
+    )
+
+    fig2.update_layout(template='plotly_dark', title='5 Most Active Actors in Series per Decade', showlegend=False, height = 1250, width=1000)
+    st.plotly_chart(fig2, use_container_width=True)
+    
+    'There is little to analyze here, we can at first see that Series started to take off, expectedly, after the World War 2 and the advent of the television. We can also note, again as expected, that no actor appears in the two graphs, and TV Series actors are usually specialized in this genre.'
+    'There are some more faults in the database that this graph points out though. It looks like the 1970s telenovelas episodes were improperly categorized as tvSeries instead of episodes, which explains the inhuman productivity of the actors showing in this decade. This is another bias of the database, which makes it quite difficult to interpret results on a wold scale.'
+
+
+def actors_age():
+    
+    st.subheader('Actors and Actresses\'s Age Evolution')
+    
+def recommendations():
+    pass
 
 if __name__ == "__main__":
     main()

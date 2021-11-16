@@ -1,1 +1,0 @@
-Dossier pour placer les fichiers graphiques utilisés sur le site.
