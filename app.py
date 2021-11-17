@@ -268,7 +268,13 @@ def actors_ratings():
         row=4, col=3
     )
 
-    fig.update_layout(template='plotly_dark', title='5 Most Active Actors in Movies per Decade' ,showlegend=False,height = 1250,width=1000)
+    fig.update_layout(
+        template='plotly_dark',
+        title='5 Most Active Actors in Movies per Decade',
+        showlegend=False,
+        height = 1250,
+        width=1300
+    )
     st.plotly_chart(fig, use_container_width=True)
 
     'There are some noticeable patterns here. We can notice first, looking at the overall results, we can see that the top 5 most productive actors are Asian, with one Japanese actor, one Korean, and the other 3 being Indians.'
@@ -376,7 +382,13 @@ def actors_ratings():
         row=4, col=3
     )
 
-    fig2.update_layout(template='plotly_dark', title='5 Most Active Actors in Series per Decade', showlegend=False, height = 1250, width=1000)
+    fig2.update_layout(
+        template='plotly_dark',
+        title='5 Most Active Actors in Series per Decade',
+        showlegend=False,
+        height = 1250,
+        width=1300
+    )
     st.plotly_chart(fig2, use_container_width=True)
     
     'There is little to analyze here, we can at first see that Series started to take off, expectedly, after the World War 2 and the advent of the television. We can also note, again as expected, that no actor appears in the two graphs, and TV Series actors are usually specialized in this genre.'
