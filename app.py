@@ -4,9 +4,12 @@ import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
-from sklearn.cluster import KMeans
+import re
+import math
+from collections import Counter
+import operator
 
-st.set_page_config(page_title='Movie Analysis', page_icon=':cat:')
+st.set_page_config(page_title='Movie Analysis', page_icon=':movie_camera:')
 
 def _max_width_():
     max_width_str = "max-width: 1300px;"
@@ -45,13 +48,100 @@ def load_actors_series():
 def load_actors_age():
     return pd.read_csv('data/actors_age.csv.zip')
 
+@st.cache
+def load_movies():
+    return pd.read_csv('data/movies_merged.csv.zip')
+
 
 data_runtime = load_runtime()
 data_ratings = load_ratings()
 data_actors = load_actors()
 data_actors_series = load_actors_series()
 data_age = load_actors_age()
+data_movies = load_movies()
 
+# Cosine Algorithm Class
+class CosineSimilarity:
+    def __init__(self):
+        print("Cosine Similarity initialized")
+
+    @staticmethod
+    def cosine_similarity_of(text1, text2):
+        # Get words first
+        first = re.compile(r"[\w']+").findall(text1)
+        second = re.compile(r"[\w']+").findall(text2)
+
+        # Get dictionary with each word and count
+        vector1 = Counter(first)
+        vector2 = Counter(second)
+
+        # Convert vectors to set to find common words as intersection
+        common = set(vector1.keys()).intersection(set(vector2.keys()))
+
+        dot_product = 0.0
+
+        for i in common:
+            # Get amount of each common word for both vectors and multiply them then add them together
+            dot_product += vector1[i] * vector2[i]
+
+        squared_sum_vector1 = 0.0
+        squared_sum_vector2 = 0.0
+
+        # Get squared sum values of word counts from each vector
+        for i in vector1.keys():
+            squared_sum_vector1 += vector1[i]**2
+
+        for i in vector2.keys():
+            squared_sum_vector2 += vector2[i]**2
+
+        #calculate magnitude with squared sums.
+        magnitude = math.sqrt(squared_sum_vector1) * math.sqrt(squared_sum_vector2)
+
+        if not magnitude:
+           return 0.0
+        else:
+           return float(dot_product) / magnitude
+       
+
+# Recommendations Engine Class
+class RecommenderEngine:
+    def __init__(self):
+        print("engine initialized")
+
+    def get_recommendations(keywords):
+
+        df = data_movies
+        df.reset_index(inplace=True, drop=True)        
+
+        score_dict = {}
+        
+        # Obtaining the score by the cosine similarity method
+        for index, row in df.iterrows():
+            score_dict[index] = CosineSimilarity.cosine_similarity_of(row['data'], keywords)
+
+        # Sort movies by score and index
+        sorted_scores = sorted(score_dict.items(), key=operator.itemgetter(1), reverse=True)
+
+        counter = 0
+
+        # Create an empty results data frame
+        resultDF = pd.DataFrame(columns=('tconst', 'originalTitle', 'data', 'score'))
+
+        # Get highest scored 10 movies.
+        for i in sorted_scores:
+
+            resultDF = resultDF.append({'tconst': df.iloc[i[0]]['tconst'], 'originalTitle': df.iloc[i[0]]['originalTitle'], 'data': df.iloc[i[0]]['data'], 'score': i[1]}, ignore_index=True)
+            counter += 1
+
+            if counter>10:
+                break
+
+        # remove the first row
+        return resultDF.iloc[1:]
+    
+
+def get_recommendations(keywords):
+    return RecommenderEngine.get_recommendations(keywords)
 
 
 def main():
@@ -544,7 +634,29 @@ def actors_age():
     'It should therefore not be considered as an absolute truth, but as a trends indicator only. Those trends being that the age difference between genders is shrinking, to the point of being nearly non existent nowadays, and that actors and actresses tend to work longer, in many cases way past the usual retirement age. A good recent example of that phenomenon is Clint Eastwood, who is just releasing a movie this week, that he directed himself and in which he plays the main actor, at the ripe age of 91.'
     
 def recommendations():
-    pass
+    
+    st.subheader("Movie Recommendations")
+    
+    'Finally we have built a recommendations engine that will provide a list of 10 movies based on one that you can select here. Please note that only movies rated 6.0 or more on the IMDb are present in the list.'
+    'The dropdown menu will show as the default choice the movie A.I. Artificial Intelligence, as a tribute to this area we are barely touching here.'
+    
+    movie_title = st.selectbox('Select a movie to get recommendations for:', data_movies.originalTitle, index=10243)
+    
+    movie_data = data_movies.loc[data_movies['originalTitle']==movie_title,'data'].values[0]
+    recommendations = get_recommendations(movie_data)
+    
+    'Here are the results!'
+    'Click on the movies to open its page on the IMDb'
+    
+    url_base = 'https://www.imdb.com/title/'
+    
+    for i in range(10):
+        movie_name = recommendations.iloc[i]['originalTitle']
+        movie_id = recommendations.iloc[i]['tconst']
+        st.markdown(f"""
+                    [{movie_name}]({url_base}{movie_id})
+                    """)
+        
 
 if __name__ == "__main__":
     main()
