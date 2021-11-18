@@ -508,7 +508,7 @@ def actors_age():
     
     'Here our goal was to find out how the average age of the cast evolved over the years, and see if there is a difference between genders on this regard.'
     'To do this, we gathered data regarding the age of all the credited cast at the time of the movie release, and and averaged them by year. We also split that data between genders, based on if the person was credited as an actor or an actress.'
-    'The filters were the same as for the mvoies duration, meanning that we kept only movies released between 1918 and 2021, and with a duration between 58 and 270 minutes.'
+    'The filters were the same as for the movies duration, meanning that we kept only movies released between 1918 and 2021, and with a duration between 58 and 270 minutes.'
     
     fig = go.Figure() 
 
