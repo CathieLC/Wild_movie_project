@@ -306,7 +306,7 @@ def movie_duration():
     st.plotly_chart(fig, use_container_width=True)
     
     'As we can see, the genre can have a noticeable influence on the average duration. Action movies especially tend to last quite a bit longer, and this has been going on since the 90s, with a peak at nearly 2 hours on average. On the other side, comedies and adventure movies, usually aimed at a younger and familial audience, tend to be shorter or close to the average.'
-    'There are some oddities as well, the most noticeable one is the apparent drop in movie length between 2008 and 2016 (give or take), that affects all the genres at the same time, and on the same scale. A deeper dive into the history of the film industry is necessary here to provide a proper explanation.'
+    'There are some oddities as well, the most noticeable one is the apparent drop in movie length between 2008 and 2016 (give or take), that affects all the genres at the same time, and on the same scale. After some research and discussion, it appears that one important reason was the huge strike of the Writers Guild of America, that was also supported by many actors, which led to severe production difficulties. This caused budgeting issues that have been compensated in some cases by shortening the movie length. This strike had a very severe impact on TV Series production (that nearly came to a halt between 2007 and 2008), but as we can see, there were also noticeable consequences on the film industry.'
 
 
 
@@ -629,15 +629,19 @@ def actors_age():
 
     st.plotly_chart(fig, use_container_width=True)
     
-    'There are several trends that can be noticed here. The most obvious one is that on average, the average age of the cast is steadily increasing over the years. There is also a difference based on gender, actresses being most of the time younger than their male counterparts. We could make conjectures about the reasons why, a possible reason is the weight of patriarchy and sexism before the 80s that could have, more often than not, limited the actresses to supporting roles where youth and beauty were important to help the main actor shine. As the casting in movies tend to be more diverse, that age factor is getting less and less important.'
-    'It should also be noted that this data, even though it aims at being as comprehensive as possible, is still partial, and will mostly show the main cast of a movie. As actors and actresses remain active longer and longer, younger people who are just starting or trying to break through have very small roles that may not be credited here, leading to a bias showing the average age of the cast being older than it probably is.'
-    'It should therefore not be considered as an absolute truth, but as a trends indicator only. Those trends being that the age difference between genders is shrinking, to the point of being nearly non existent nowadays, and that actors and actresses tend to work longer, in many cases way past the usual retirement age. A good recent example of that phenomenon is Clint Eastwood, who is just releasing a movie this week, that he directed himself and in which he plays the main actor, at the ripe age of 91.'
+    'There are several trends that can be noticed here. The most obvious one is that on average, the average age of the cast is steadily increasing over the years. There is also a difference based on gender, actresses being most of the time younger than their male counterparts. We could make conjectures about the reasons why, a possible reason is the weight of patriarchy and sexism before the 80s that could have, more often than not, limited the actresses to supporting roles where youth and beauty were important to help the main actor shine. Physical appearance was also an important criteria in female roles, due to those expectations regarding beauty by the industry, and most of the public.'
+    'As the casting in movies tend to be more diverse towards the 21st century, that age difference is getting less and less important, while the overall age average keeps growing. We can notice for example that the average age of the main cast was 52 in 1990, and 63 in 2020.'
+    'It should also be noted that this data, even though it aims at being as comprehensive as possible, is still partial, and will mostly show the main cast of a movie. As actors and actresses remain active longer and longer, younger people who are just starting or trying to break through have smaller roles that may not be credited here, leading to a bias showing the average age of the cast being older than it probably is.'
+    'It should therefore not be considered as an absolute truth, but as a trends indicator only. Those trends being that the age difference between genders is shrinking, to the point of being nearly non existent nowadays, and that actors and actresses tend to work longer, in many cases way past the usual retirement age.'
+    'We can look at two extreme examples of major actors who are way off that age average.'
+    'The first one is Clint Eastwood, who is just releasing a movie this week, that he directed himself and in which he plays the main actor, at the ripe age of 91, and who has no intention of retiring (at least not publicly).'
+    'The second one is a new star of the french film industry, Benjamin Voisin, age 24, who has already been nominated for the Césars, and who is planned to be on the main cast of two movies set to be released next year.'
     
 def recommendations():
     
     st.subheader("Movie Recommendations")
     
-    'Finally we have built a recommendations engine that will provide a list of 10 movies based on one that you can select here. Please note that only movies rated 6.0 or more on the IMDb are present in the list.'
+    'Finally we have built a recommendations engine that will provide a list of 10 movies based on one that you can select here. Please note that only movies rated 6.0 or more on the IMDb are present in the list. There are a bit more than 23 000 movies in the database.'
     'The dropdown menu will show as the default choice the movie A.I. Artificial Intelligence, as a tribute to this area we are barely touching here.'
     
     movie_title = st.selectbox('Select a movie to get recommendations for:', data_movies.originalTitle, index=10243)
