@@ -17,3 +17,6 @@ The contributors to this project are:
 - [Josse Preis](https://github.com/jossepreis)
 
 The data cleaning process is located in the data_cleaning.ipynb notebook, along with our concluding thoughts on the project. The source code for the recommender engine is located in the ml_cosine_algorithm.ipynb notebook.
+
+If you would like to fork this project and run it locally, please install the requirements and run the script using this command at the root of the repository:
+`streamlit run app.py`
