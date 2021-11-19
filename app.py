@@ -173,7 +173,7 @@ def home():
     'The purpose of this project is to help a new movie theatre owner to get a better idea what the film industry looks like at the moment, and how it has evolved over the years.'
     'Then, we will provide a recommendation algorithm to help him select the best movies to play at the theatre, based on the tastes of his audience.'
     ''
-    'This app is brought to you by the awesome Wild Data Green Team 1 (yes we need a better name):'
+    'This app is brought to you by the awesome Data Explorers Team:'
     col1, col2 = st.columns(2)
     
     with col1:
