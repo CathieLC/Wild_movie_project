@@ -15,3 +15,5 @@ The contributors to this project are:
 - [Catherine Le Calve](https://github.com/CathieLC)
 
 - [Josse Preis](https://github.com/jossepreis)
+
+The data cleaning process is located in the data_cleaning.ipynb notebook, along with our concluding thoughts on the project. The source code for the recommender engine is located in the ml_cosine_algorithm.ipynb notebook.
