@@ -2,7 +2,7 @@
 
 This project aims at using the IMDb datasets to create a movie recommender system, and provide some analysis on the film industry as well, on some select KPIs, as part of the Wild Code School Data Analyst training.
 
-The web page containing the recommender system and the analysis is available on [this page](https://share.streamlit.io/cathielc/wild_movie_project/main/app.py).
+The web page containing the recommender system and the analysis is available on [this page](https://wild-movie-112021.herokuapp.com/).
 
 Please feel free to consult it and to play around with the recommender engine.
 
