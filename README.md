@@ -1,4 +1,4 @@
-# Wild_movie_project
+# Movie Recommender Project
 
 This project aims at using the IMDb datasets to create a movie recommender system, and provide some analysis on the film industry as well, on some select KPIs, as part of the Wild Code School Data Analyst training.
 
